@@ -9,6 +9,7 @@ interface props extends serviceContent {
 
 export const ServiceContent: React.FC<props> = ({ name, src, id, minPrice, description, accordionArray }) => {
 	const { Ccontainer, heading, content, details, image, text, accordionContainer } = classes;
+	console.log(id)
 	return (
 		<div className={Ccontainer}>
 			<h1 className={heading}>{name}</h1>
