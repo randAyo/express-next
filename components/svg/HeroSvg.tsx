@@ -12,15 +12,6 @@ interface names {
     letters10: string
     letters11: string
     letters12: string
-    letters13: string
-    letters14: string
-    letters15: string
-    letters16: string
-    letters17: string
-    letters18: string
-    letters19: string
-
-
 }
 interface HeroSvgProps {
     blue: string
@@ -29,7 +20,7 @@ interface HeroSvgProps {
 }
 
 export const HeroSvg: React.FC<HeroSvgProps> = ({ blue, orange, className }) => {
-    const { letters1, letters2, letters3, letters4, letters5, letters6, letters7, letters9, letters8, letters10, letters11, letters12, letters13, letters14, letters15, letters16, letters17, letters18, letters19 } = className;
+    const { letters1, letters2, letters3, letters4, letters5, letters6, letters7, letters9, letters8, letters10, letters11, letters12 } = className;
     return (
 
         <svg
