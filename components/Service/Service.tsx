@@ -1,5 +1,4 @@
 import React from 'react'
-import classes from './Service.module.scss'
 import { content } from '../../interfaces';
 // import { detail } from '../../interfaces';
 interface detail {
