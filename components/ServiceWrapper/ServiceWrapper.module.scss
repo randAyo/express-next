@@ -1,0 +1,12 @@
+@import '../../scss/all.scss';
+
+.container {
+    @include contain;
+    margin-top              : 10rem;
+    @include flexed($justify: space-evenly);
+
+    @include screen((max-width: 900px)) {
+        padding       : 2rem 0;
+        flex-direction: column;
+    }
+}

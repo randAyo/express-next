@@ -1,0 +1,213 @@
+@import '../../scss/all.scss';
+$numbers                :(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
+$animation-speed-seconds:#{$animation-speed}'s';
+$circle-delay           :0s;
+$line-delay             :#{($animation-speed*18)}'s';
+$line-speed             :#{($animation-speed*4)}'s';
+
+//Header starts here ============================
+.dropdown {
+    position: relative;
+    font-size: 2rem;
+}
+
+
+.headerStyle {
+    position           : sticky;
+    left               : 0;
+    right              : 0;
+    top                : 0;
+    z-index            : 100;
+    display            : grid;
+    grid-template-areas: "logo nav";
+    padding            : 1em;
+    background-color   : $header-bg;
+
+    .Nav {
+        grid-area: nav;
+        @include flexed;
+
+        .navbarContentList {
+            padding        : 1em 0;
+            position       : relative;
+            display        : flex;
+            align-items    : center;
+            justify-content: space-evenly;
+            width          : 100%;
+        }
+    }
+
+    .Logo {
+        height: 60px;
+    }
+
+    // .burger {
+    //     display: none;
+    // }
+}
+
+.navbarAnchor,
+.dropbtn {
+    color                           : set-text-color($header-bg);
+    background-color                : transparent;
+    @include heading-font($font-size: 2rem)
+}
+
+.dropbtn {
+    border: none;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        outline: none;
+    }
+}
+
+// HANDLE SMALL SCREEN
+@media (max-width: 900px) {
+    .bubble {
+        display: none;
+    }
+    .burger {
+        display: none;
+    }
+    .Header {
+        grid-template-areas: "logo burger""nav nav";
+
+        .Nav {
+            .navbarContentList {
+                flex-direction: column;
+
+                li {
+                    padding: 1rem 0;
+                }
+            }
+        }
+
+        .burger {
+            display: flex;
+        }
+    }
+}
+
+
+//ANimations
+.NavAnimation-enter {
+    opacity  : 0.7;
+    transform: translateY(-100%);
+}
+
+.NavAnimation-enter-active {
+    opacity   : 1;
+    transform : translateY(0);
+    transition: opacity 350ms linear, transform 350ms linear;
+}
+
+.NavAnimation-exit {
+    opacity: 1;
+}
+
+.NavAnimation-exit-active {
+    opacity   : 0;
+    transform : translateY(-100%);
+    transition: opacity 350ms linear, transform 350ms linear;
+}
+
+.bubble {
+    background-color: $light-orange;
+    border-radius   : 1rem;
+    height          : 0vh;
+    width           : 0vw;
+    z-index         : -2;
+    position        : absolute;
+    bottom          : 0%;
+    transition      : all #{$animation-speed}s $ease;
+}
+
+//Header ends here =============================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//logo starts here
+
+:export {
+    blue: $blue;
+    gray: $gray;
+    orange: $orange;
+}
+
+
+//burger starts here
+
+.burger {
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: auto 0 auto auto;
+    &:focus {
+        outline: none;
+    }
+    div {
+        width: 2rem;
+        height: 0.25rem;
+        background-color: $black;
+        margin-bottom: 0.25rem;
+        &:nth-child(1) {
+            transform: rotate(-0) translate(0%, 0%);
+            transition: transform 350ms $ease;
+        }
+        &:nth-child(3) {
+            transform: rotate(0) translate(0%, 0%);
+            transition: transform 350ms $ease;
+        }
+        &:nth-child(2) {
+            width: 2rem;
+            transition: width 350ms $ease;
+        }
+    }
+}
+
+.BurgerX {
+    div {
+        &:nth-child(1) {
+            transform: rotate(45deg) translate(33%, 100%);
+            transition: transform 350ms $ease;
+        }
+        &:nth-child(3) {
+            transform: rotate(-45deg) translate(33%, -100%);
+            transition: transform 350ms $ease;
+        }
+        &:nth-child(2) {
+            width: 0;
+            transition: width 350ms $ease;
+        }
+    }
+}
