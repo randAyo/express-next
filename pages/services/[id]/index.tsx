@@ -30,7 +30,7 @@ const Product: NextPage<PropsPro> = ({ name, accordion, nameList, src, id, descr
     )
 }
 Product.getInitialProps = async ({ query }) => {
-    const res = await fetch(`http://localhost:3000/api/product/${query.id}`);
+    const res = await fetch(`https://express-puce.vercel.app/api/product/${query.id}`);
     const post = await res.json();
     return post;
 
