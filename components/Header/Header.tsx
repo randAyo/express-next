@@ -42,20 +42,20 @@ export const Header: React.FC<HeaderProps> = ({ height }) => {
     }
     const headerColorChange = () => {
         const pageHeight = window.pageYOffset;
-        // if (pageHeight > height) {
-        //     document.getElementsByTagName("header")[0].classList.add(`Header-${color}`)
-        //     // document.getElementsByClassName("navbar-anchor")[0].style.borderBottom = "2px solid red"
-        // } else {
-        //     document.getElementsByTagName("header")[0].classList.remove(`Header-${color}`)
-        // }
-        const head: HTMLCollectionOf<HTMLElement> = document.getElementsByTagName("header")[0].style;
         if (pageHeight > height) {
-            head.backgroundColor = blue;
+            document.getElementsByTagName("header")[0].classList.add(`Header-${blue}`)
             // document.getElementsByClassName("navbar-anchor")[0].style.borderBottom = "2px solid red"
         } else {
-            head.backgroundColor = orange;
-            // document.getElementsByTagName("header")[0].classList.remove(`Header-${color}`)
+            document.getElementsByTagName("header")[0].classList.remove(`Header-${orange}`)
         }
+        // const head: HTMLCollectionOf<HTMLElement> = document.getElementsByTagName("header");
+        // if (pageHeight > height) {
+        //     head[0].style.backgroundColor = blue;
+        //     // document.getElementsByClassName("navbar-anchor")[0].style.borderBottom = "2px solid red"
+        // } else {
+        //     head[0].style.backgroundColor = orange;
+        //     // document.getElementsByTagName("header")[0].classList.remove(`Header-${color}`)
+        // }
     }
     const toggleNav = () => {
         setIsNavVisible(!isNavVisible)
