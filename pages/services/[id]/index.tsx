@@ -1,11 +1,15 @@
 import Layout from '../../../components/Layout'
 import { NextPage } from 'next';
-import { api } from '../../../interfaces';
+import { api, accordion } from '../../../interfaces';
 import { SideNav } from '../../../components/SideNav/SideNav';
 import { ServiceContent } from '../../../components/ServiceContent/ServiceContent';
 import { ServiceWrapper } from '../../../components/ServiceWrapper/ServiceWrapper';
 
-const Product: NextPage<api> = ({ name, accordion, nameList, src, id, description, minPrice }) => {
+interface PropsPro extends api {
+    accordion: accordion[]
+}
+
+const Product: NextPage<PropsPro> = ({ name, accordion, nameList, src, id, description, minPrice }) => {
     if (typeof name === 'undefined') {
         return <h1> Error </h1>
     }
