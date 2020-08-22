@@ -66,7 +66,7 @@ export const Header: React.FC<HeaderProps> = ({ height }) => {
     }
     const onOneHover = (id: number) => {
     //    console.log('hovred navbar', id)
-        const styl = document.getElementsByClassName('bubble')[0].style;
+        const styl = document.querySelectorAll('.bubble')[0].style;
         if (id === 0) {
             styl.width = '0px';
             styl.height = '0px'
