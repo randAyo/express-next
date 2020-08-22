@@ -72,10 +72,10 @@ export const Header: React.FC<HeaderProps> = ({ height }) => {
             styl.style.height = '0px'
         } else {
 
-            const elem = document.querySelectorAll(`.${navbarAnchor}`);
-            console.log(elem[id].offsetLeft)
-            const firstElem = elem[id].getBoundingClientRect();
-            const left = elem[id].offsetLeft;
+            const elem = document.getElementsByClassName(`${navbarAnchor}`)[id] as HTMLAnchorElement;
+            console.log(elem.offsetLeft)
+            const firstElem = elem.getBoundingClientRect();
+            const left = elem.offsetLeft;
             styl.style.left = `${left}px`;
             styl.style.width = `${firstElem.width}px`;
             styl.style.height = `${firstElem.height / 4}px`;
