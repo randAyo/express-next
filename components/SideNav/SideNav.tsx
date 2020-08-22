@@ -13,12 +13,13 @@ export const SideNav: React.FC<productName> = ({ nameList }) => {
             <h1>Produits: </h1>
             <ul className={unordered}>{nameList.map(ex => {
                 let url = `/services/${ex.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`;
-                return(
-                <Link
-                    to={url}
-                    href={url}>
-                    <li className={btn} key={ex.id}>{ex.name}</li>
-                </Link>)
+                return (
+                    <Link
+                        key={ex.id}
+                        to={url}
+                        href={url}>
+                        <li className={btn}>{ex.name}</li>
+                    </Link>)
             }
             )}</ul>
         </div>
