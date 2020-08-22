@@ -65,19 +65,19 @@ export const Header: React.FC<HeaderProps> = ({ height }) => {
         setisDropVisible(!isDropVisible);
     }
     const onOneHover = (id: number) => {
-    //    console.log('hovred navbar', id)
-        const styl = document.querySelectorAll('.bubble')[0].style;
+        //    console.log('hovred navbar', id)
+        const styl = document.querySelectorAll('.bubble')[0];
         if (id === 0) {
-            styl.width = '0px';
-            styl.height = '0px'
+            styl.style.width = '0px';
+            styl.style.height = '0px'
         } else {
 
-            const elem = document.getElementsByClassName(navbarAnchor)!;
+            const elem = document.querySelectorAll(`.${navbarAnchor}`)!;
             const firstElem = elem[id].getBoundingClientRect();
             const left = elem[id].offsetLeft;
-            styl.left = `${left}px`;
-            styl.width = `${firstElem.width}px`;
-            styl.height = `${firstElem.height / 4}px`;
+            styl.style.left = `${left}px`;
+            styl.style.width = `${firstElem.width}px`;
+            styl.style.height = `${firstElem.height / 4}px`;
         }
     }
     const nameList: string[] = [];
