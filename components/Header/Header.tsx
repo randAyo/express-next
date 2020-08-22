@@ -66,13 +66,14 @@ export const Header: React.FC<HeaderProps> = ({ height }) => {
     }
     const onOneHover = (id: number) => {
         //    console.log('hovred navbar', id)
-        const styl = document.querySelectorAll('.bubble')[0];
+        const styl = document.querySelector('.bubble') as HTMLDivElement;
         if (id === 0) {
             styl.style.width = '0px';
             styl.style.height = '0px'
         } else {
 
-            const elem = document.querySelectorAll(`.${navbarAnchor}`)!;
+            const elem = document.querySelectorAll(`.${navbarAnchor}`);
+            console.log(elem[id].offsetLeft)
             const firstElem = elem[id].getBoundingClientRect();
             const left = elem[id].offsetLeft;
             styl.style.left = `${left}px`;
