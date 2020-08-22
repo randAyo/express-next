@@ -4,6 +4,7 @@ import { api, accordion } from '../../../interfaces';
 import { SideNav } from '../../../components/SideNav/SideNav';
 import { ServiceContent } from '../../../components/ServiceContent/ServiceContent';
 import { ServiceWrapper } from '../../../components/ServiceWrapper/ServiceWrapper';
+import { server } from '../../../config'
 
 interface PropsPro extends api {
     accordion: accordion[]
@@ -13,6 +14,8 @@ const Product: NextPage<PropsPro> = ({ name, accordion, nameList, src, id, descr
     if (typeof name === 'undefined') {
         return <h1> Error </h1>
     }
+    console.log('envire   ', process.env.BASE_URL)
+
     return (
         <Layout title="Express Imprimerie Services">
             <ServiceWrapper>
@@ -28,9 +31,10 @@ const Product: NextPage<PropsPro> = ({ name, accordion, nameList, src, id, descr
             </ServiceWrapper>
         </Layout>
     )
+
 }
 Product.getInitialProps = async ({ query }) => {
-    const res = await fetch(`https://express-chi.vercel.app/api/product/${query.id}`);
+    const res = await fetch(`${server}/api/product/${query.id}`)
     const post = await res.json();
     return post;
 
