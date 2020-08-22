@@ -10,12 +10,10 @@ interface PropsPro extends api {
     accordion: accordion[]
 }
 
-const Product: NextPage<PropsPro> = ({ name, accordion, nameList, src, id, description, minPrice }) => {
+const Product: NextPage<PropsPro> = ({ name, accordion, nameList, src, description, minPrice }) => {
     if (typeof name === 'undefined') {
         return <h1> Error </h1>
     }
-    console.log('envire   ', process.env.BASE_URL)
-
     return (
         <Layout title="Express Imprimerie Services">
             <ServiceWrapper>
@@ -24,7 +22,6 @@ const Product: NextPage<PropsPro> = ({ name, accordion, nameList, src, id, descr
                     accordionArray={accordion}
                     name={name}
                     src={src}
-                    id={id}
                     minPrice={minPrice}
                     description={description}
                 />

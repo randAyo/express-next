@@ -7,9 +7,8 @@ interface props extends serviceContent {
 	accordionArray: accordion[]
 }
 
-export const ServiceContent: React.FC<props> = ({ name, src, id, minPrice, description, accordionArray }) => {
+export const ServiceContent: React.FC<props> = ({ name, src, minPrice, description, accordionArray }) => {
 	const { Ccontainer, heading, content, details, image, text, accordionContainer } = classes;
-	console.log(id)
 	return (
 		<div className={Ccontainer}>
 			<h1 className={heading}>{name}</h1>

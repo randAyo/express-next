@@ -21,7 +21,6 @@ export interface detail {
 }
 export interface serviceContent {
   name: string
-  id: number
   src: string
   description: string[]
   minPrice: number
