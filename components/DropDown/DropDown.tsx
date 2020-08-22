@@ -17,8 +17,9 @@ export const DropDown: React.FC<DropDownProps> = ({ toggleDropDown, toggleNav, c
 		>
 			<ul className={dropdownUl}>
 				{
-					content.map((ex, index) =>
-						<Link as={`/services/${ex.normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`} href={`/services/${ex}`}><li
+					content.map((ex, index) => {
+						let url = `/services/${ex.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`;
+						return <Link as={url} href={`/services/${ex}`}><li
 							key={index}
 							className={dropdownLi}
 							onClick={() => {
@@ -29,6 +30,7 @@ export const DropDown: React.FC<DropDownProps> = ({ toggleDropDown, toggleNav, c
 							<a>{ex}</a>
 						</li>
 						</Link>
+					}
 					)
 				}
 

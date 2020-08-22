@@ -4,11 +4,10 @@ import { NameList } from '../../../interfaces/index'
 
 export default function getProduct(req: NextApiRequest, res: NextApiResponse) {
     if (req.method !== 'GET') {
-        res.status(500).json({ message: 'Sorry we only get Get' })
+        res.status(500).json({ message: 'Sorry we only support Get' })
     }
-    const quer = req.query.id.toString().toLowerCase();
-    const removedAccent= quer.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-    const product = details.find(ex => ex.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") === removedAccent);
+    const quer = req.query.id.toString().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    const product = details.find(ex => ex.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") === quer);
     if (typeof product === 'undefined') {
         res.json({ message: 'product Not Found' })
 
