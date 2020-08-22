@@ -622,7 +622,7 @@ const details: detail[] = [
     }
   },
   {
-    name: 'DÉPLIANTS',
+    name: 'DEPLIANTS',
     id: 4,
     src: '/assets/image4.webp',
     obj: depliant,
