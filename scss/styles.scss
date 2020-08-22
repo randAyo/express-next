@@ -651,39 +651,4 @@ p {
 }
 
 
-// CHANGE ON SCROLL
-@each $chosen-color in $colors {
-    $no-hashtag    : isHex($chosen-color);
-    $inversed-color: set-text-color($chosen-color);
-
-    .Header-#{$no-hashtag} {
-        background-color: $chosen-color;
-
-        .Nav {
-            .navbarContentList {
-                li {
-
-                    .navbarAnchor,
-                    .dropbtn {
-                        color: $inversed-color !important;
-                    }
-
-                    .dropdownLi {
-                        a {
-                            color: $chosen-color;
-                        }
-
-                        &:hover {
-                            background-color: $chosen-color;
-
-                            a {
-                                color: $inversed-color;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
 

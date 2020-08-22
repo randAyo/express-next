@@ -42,20 +42,13 @@ export const Header: React.FC<HeaderProps> = ({ height }) => {
     }
     const headerColorChange = () => {
         const pageHeight = window.pageYOffset;
+        const element = document.querySelector("header") as HTMLHeadElement;
+        console.log(element)
         if (pageHeight > height) {
-            document.getElementsByTagName("header")[0].classList.add(`Header-${blue}`)
-            // document.getElementsByClassName("navbar-anchor")[0].style.borderBottom = "2px solid red"
+            element.style.backgroundColor = blue;
         } else {
-            document.getElementsByTagName("header")[0].classList.remove(`Header-${orange}`)
+            element.style.backgroundColor = orange;
         }
-        // const head: HTMLCollectionOf<HTMLElement> = document.getElementsByTagName("header");
-        // if (pageHeight > height) {
-        //     head[0].style.backgroundColor = blue;
-        //     // document.getElementsByClassName("navbar-anchor")[0].style.borderBottom = "2px solid red"
-        // } else {
-        //     head[0].style.backgroundColor = orange;
-        //     // document.getElementsByTagName("header")[0].classList.remove(`Header-${color}`)
-        // }
     }
     const toggleNav = () => {
         setIsNavVisible(!isNavVisible)
