@@ -7,7 +7,8 @@ export default function getProduct(req: NextApiRequest, res: NextApiResponse) {
         res.status(500).json({ message: 'Sorry we only get Get' })
     }
     const quer = req.query.id.toString().toLowerCase();
-    const product = details.find(ex => ex.name.toLowerCase() === quer);
+    const removedAccent= quer.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    const product = details.find(ex => ex.name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "") === removedAccent);
     if (typeof product === 'undefined') {
         res.json({ message: 'product Not Found' })
 

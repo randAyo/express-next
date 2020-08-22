@@ -24,7 +24,7 @@ export const Card: React.FC<CardProps> = ({ cardId, src, title, content, setInde
                 </div>
             </div>
             <div className={cardAction}>
-                <Link href={`/services/${title}`}><button className={cardLink}>En Savoir Plus</button></Link>
+                <Link href={`/services/${title.normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`}><button className={cardLink}>En Savoir Plus</button></Link>
             </div>
         </div>
     );

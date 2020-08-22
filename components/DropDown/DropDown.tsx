@@ -18,7 +18,7 @@ export const DropDown: React.FC<DropDownProps> = ({ toggleDropDown, toggleNav, c
 			<ul className={dropdownUl}>
 				{
 					content.map((ex, index) =>
-						<Link as={`/services/${ex}`} href={`/services/${ex}`}><li
+						<Link as={`/services/${ex.normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`} href={`/services/${ex}`}><li
 							key={index}
 							className={dropdownLi}
 							onClick={() => {
