@@ -8,7 +8,7 @@ $line-speed             :#{($animation-speed*4)}'s';
 //Burger starts here ==================================
 .burger {
     background     : transparent;
-    display        : flex;
+    display        : none;
     flex-direction : column;
     justify-content: space-around;
     align-items    : center;
@@ -131,46 +131,21 @@ $line-speed             :#{($animation-speed*4)}'s';
         display: none;
     }
 
-    .Header {
+    .burger {
+        display: flex;
+    }
+
+    .headerStyle {
         grid-template-areas: "logo burger""nav nav";
+    }
 
-        .Nav {
-            .navbarContentList {
-                flex-direction: column;
+    .navbarContentList {
+        flex-direction: column;
 
-                li {
-                    padding: 1rem 0;
-                }
-            }
-        }
-
-        .burger {
-            display: flex;
+        li {
+            padding: 1rem 0;
         }
     }
-}
-
-
-//ANimations
-.NavAnimation-enter {
-    opacity  : 0.7;
-    transform: translateY(-100%);
-}
-
-.NavAnimation-enter-active {
-    opacity   : 1;
-    transform : translateY(0);
-    transition: opacity 350ms linear, transform 350ms linear;
-}
-
-.NavAnimation-exit {
-    opacity: 1;
-}
-
-.NavAnimation-exit-active {
-    opacity   : 0;
-    transform : translateY(-100%);
-    transition: opacity 350ms linear, transform 350ms linear;
 }
 
 .bubble {
@@ -187,35 +162,13 @@ $line-speed             :#{($animation-speed*4)}'s';
 //Header ends here =============================
 
 
+//logo starts here =============================
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//logo starts here
-
+//burger starts here =============================
 :export {
     blue  : $blue;
     gray  : $gray;
     orange: $orange;
 }
-
-
-//burger starts here

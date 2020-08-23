@@ -43,7 +43,6 @@ export const Header: React.FC<HeaderProps> = ({ height }) => {
 	const headerColorChange = () => {
 		const pageHeight = window.pageYOffset;
 		const element = document.querySelector("header") as HTMLHeadElement;
-		console.log(element)
 		if (pageHeight > height) {
 			element.style.backgroundColor = blue;
 		} else {
@@ -64,7 +63,6 @@ export const Header: React.FC<HeaderProps> = ({ height }) => {
 			styl.style.height = '0px'
 		} else {
 			const elem = document.getElementsByClassName(`${navbarAnchor}`)[id] as HTMLAnchorElement;
-			console.log(elem.offsetLeft)
 			const firstElem = elem.getBoundingClientRect();
 			const left = elem.offsetLeft;
 			styl.style.left = `${left}px`;
@@ -93,9 +91,10 @@ export const Header: React.FC<HeaderProps> = ({ height }) => {
 				<nav className={Nav}>
 					<ul className={navbarContentList}>
 						<li
+							onClick={() => isDropVisible ? null : toggleDropDown()}
 							onMouseEnter={() => isDropVisible ? null : toggleDropDown()}
 							className={dropdown} >
-							<Link href="/services/Sacs%20Publicitaire"><a onMouseOver={() => onOneHover(0)} className={[navbarAnchor].join()}>SERVICES</a></Link>
+							<a onMouseOver={() => onOneHover(0)} className={[navbarAnchor].join()}>SERVICES</a>
 							<CSSTransition
 								in={isDropVisible}
 								timeout={350}
@@ -108,6 +107,7 @@ export const Header: React.FC<HeaderProps> = ({ height }) => {
 									content={nameList}
 								/>
 							</CSSTransition>
+							{/* {	isDropVisible && } */}
 						</li>
 						<li><a onMouseOver={() => onOneHover(1)} className={navbarAnchor} href="/#section-about">Pourquoi Nous?</a></li>
 						<li><a onMouseOver={() => onOneHover(2)} className={navbarAnchor} href="/#section-contact">Contact</a></li>
@@ -117,7 +117,7 @@ export const Header: React.FC<HeaderProps> = ({ height }) => {
 			</CSSTransition>
 			<div
 				onClick={toggleNav}
-				className={!isSmallScreen ? burger : [burger, burgerX].join(' ')}><Burger /></div>
+				className={!isNavVisible ? burger : [burger, burgerX].join(' ')}><Burger /></div>
 		</header>
 	);
 }

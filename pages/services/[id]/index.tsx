@@ -5,6 +5,7 @@ import { SideNav } from '../../../components/SideNav/SideNav';
 import { ServiceContent } from '../../../components/ServiceContent/ServiceContent';
 import { ServiceWrapper } from '../../../components/ServiceWrapper/ServiceWrapper';
 import { server } from '../../../config'
+import useWindowDimensions from '../../../hoc/useWindow';
 
 interface PropsPro extends api {
     accordion: accordion[]
@@ -14,10 +15,14 @@ const Product: NextPage<PropsPro> = ({ name, accordion, nameList, src, descripti
     if (typeof name === 'undefined') {
         return <h1> Error </h1>
     }
+    if (process.browser) {
+        var { width } = useWindowDimensions();
+
+    }
     return (
         <Layout title="Express Imprimerie Services">
             <ServiceWrapper>
-                <SideNav nameList={nameList} />
+                {width > 900 && <SideNav nameList={nameList} />}
                 <ServiceContent
                     accordionArray={accordion}
                     name={name}
@@ -37,4 +42,4 @@ Product.getInitialProps = async ({ query }) => {
 
 }
 
-export default Product
+export default Product;

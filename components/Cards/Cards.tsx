@@ -3,13 +3,14 @@ import classes from './Cards.module.scss'
 import details from '../../utils/sample-data'
 import { SvgHolder } from '../svg/SvgHolder';
 import { Card } from '../Card/Card'
-const { cards, carda, colCard,indicatorContainer, indicatorItem, rightCardBtn, leftCardBtn } = classes;
-interface CardsProps {
+import useWindowDimensions from '../../hoc/useWindow';
+const { cards, carda, colCard, indicatorContainer, indicatorItem, rightCardBtn, leftCardBtn } = classes;
 
-}
+export const Cards: React.FC = ({ }) => {
+  if (process.browser) {
+    var { width } = useWindowDimensions();
 
-let width = 'lg'
-export const Cards: React.FC<CardsProps> = ({ }) => {
+  }
   const [isHovred, setisHovred] = useState<boolean>(false);
   const [index, setIndex] = useState<number>(0);
   const onNext = () => {
@@ -30,22 +31,16 @@ export const Cards: React.FC<CardsProps> = ({ }) => {
     }
   }
   let multiplier: number;
-  switch (width) {
-    case 'xs':
-      multiplier = -(100 * index);
-      break;
-    case 'sm':
-      multiplier = (60 - 100 * index);
-      break;
-    case 'md':
-      multiplier = (90 - 100 * index);
-      break;
-    case 'lg':
-      multiplier = (120 - 100 * index);
-      break;
-    default:
-      multiplier = (140 * index);
-      break;
+  if (width > 0) {
+    multiplier = -(100 * index);
+  } else if (width > 600) {
+    multiplier = (60 - 100 * index);
+  } else if (width > 960) {
+    multiplier = (90 - 100 * index);
+  } else if (width > 1280) {
+    multiplier = (120 - 100 * index);
+  } else if (width > 1920) {
+    multiplier = (140 * index);
   }
   const mappedCards = details.map(ex => {
     return <div
