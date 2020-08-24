@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import classes from './ServiceContent.module.scss'
 import { serviceContent, accordion } from '../../interfaces';
 import { Accordion } from '../Accordion/Accordion'
+import LazyLoader from '../LazyLoader/LazyLoader';
 
 interface props extends serviceContent {
 	accordionArray: accordion[]
@@ -14,7 +15,9 @@ export const ServiceContent: React.FC<props> = ({ name, src, minPrice, descripti
 			<h1 className={heading}>{name}</h1>
 			<div className={content}>
 				<div className={details}>
-					<div className={image}><img src={src} alt={name} /></div>
+					<Suspense fallback={<LazyLoader />}>
+						<div className={image}><img src={src} alt={name} /></div>
+					</Suspense>
 					<div className={text}>
 						{description.map((ex, index) =>
 							<p

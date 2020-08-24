@@ -6,6 +6,8 @@ import { ServiceContent } from '../../../components/ServiceContent/ServiceConten
 import { ServiceWrapper } from '../../../components/ServiceWrapper/ServiceWrapper';
 import { server } from '../../../config'
 import useWindowDimensions from '../../../hoc/useWindow';
+// import LazyLoader from '../../../components/LazyLoader/LazyLoader';
+// import { Suspense } from 'react';
 
 interface PropsPro extends api {
     accordion: accordion[]
@@ -22,7 +24,14 @@ const Product: NextPage<PropsPro> = ({ name, accordion, nameList, src, descripti
     return (
         <Layout title="Express Imprimerie Services">
             <ServiceWrapper>
-                {width > 900 && <SideNav nameList={nameList} />}
+                {
+                    width > 900 &&
+
+
+                    <SideNav nameList={nameList} />
+
+                }
+
                 <ServiceContent
                     accordionArray={accordion}
                     name={name}
@@ -30,6 +39,7 @@ const Product: NextPage<PropsPro> = ({ name, accordion, nameList, src, descripti
                     minPrice={minPrice}
                     description={description}
                 />
+
             </ServiceWrapper>
         </Layout>
     )
