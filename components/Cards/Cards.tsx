@@ -1,10 +1,9 @@
-import React, { useState, Suspense } from 'react'
+import React, { useState } from 'react'
 import classes from './Cards.module.scss'
 import details from '../../utils/sample-data'
 import { SvgHolder } from '../svg/SvgHolder';
 import { Card } from '../Card/Card'
 import useWindowDimensions from '../../hoc/useWindow';
-import LazyLoader from '../LazyLoader/LazyLoader';
 const { cards, carda, colCard, indicatorContainer, indicatorItem, rightCardBtn, leftCardBtn } = classes;
 
 export const Cards: React.FC = ({ }) => {
@@ -79,9 +78,7 @@ export const Cards: React.FC = ({ }) => {
         </SvgHolder>
       </button>
       <div className={cards}>
-        <Suspense fallback={<LazyLoader />}>
-          <div className={carda}>{mappedCards}</div>
-        </Suspense>
+        <div className={carda}>{mappedCards}</div>
         <div className={indicatorContainer}>
           {details.map(ex => <div
             onClick={() => setIndex(ex.id)}
