@@ -2,11 +2,11 @@ import React from 'react'
 import classes from './Contact.module.scss'
 import styles from '../FlipCard/FlipCard.module.scss'
 import { FlipCard } from '../FlipCard/FlipCard';
-import WhatsAppIcon from '@material-ui/icons/WhatsApp';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import InstagramIcon from '@material-ui/icons/Instagram';
+import { WhatsApp } from '../svg/WhatsApp';
+import { Facebook } from '../svg/Facebook';
+import { Instagram } from '../svg/Instagram';
 const { phoneItem, emailItem, directionItem } = styles;
-const { contactContainer, contactSection,contactInput, contactHeading, contactAside, whyContact, whyContactUl, howContact, howContactUl } = classes;
+const { contactContainer, contactSection, contactInput, contactHeading, contactAside, whyContact, whyContactUl, howContact, howContactUl } = classes;
 const FlipCards = (
     <div className={contactInput}>
         <FlipCard
@@ -40,9 +40,9 @@ export const Contact: React.FC = () => {
                     <div className={howContact}>
                         <h3>Comment nous contacter</h3>
                         <ul className={howContactUl}>
-                            <li><a href="https://www.facebook.com/Limprimeur-107384444097355/?ref=bookmarks"> <FacebookIcon /></a></li>
-                            <li><a href="https://www.instagram.com/express.imprimerie/"><InstagramIcon /></a></li>
-                            <li><a href="https://wa.me/212663152249"><WhatsAppIcon /> </a></li>
+                            <li><a href="https://www.facebook.com/Limprimeur-107384444097355/?ref=bookmarks"> <Facebook /></a></li>
+                            <li><a href="https://www.instagram.com/express.imprimerie/"><Instagram /></a></li>
+                            <li><a href="https://wa.me/212663152249"><WhatsApp /> </a></li>
                         </ul>
                     </div>
                 </aside>

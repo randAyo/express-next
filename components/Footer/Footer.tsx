@@ -1,14 +1,14 @@
 import React from 'react'
 import classes from './Footer.module.scss'
 import Link from 'next/link';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import EmailIcon from '@material-ui/icons/Email';
+import { Facebook } from '../svg/Facebook';
+import { Instagram } from '../svg/Instagram';
+import { WhatsApp } from '../svg/WhatsApp';
 
 
 
 export const Footer: React.FC = ({ }) => {
-    const { footer, content, aboutUs, socials } = classes;
+    const { footer, content, aboutUs, socials, icons } = classes;
 
     return (
         <footer className={footer}>
@@ -22,11 +22,11 @@ export const Footer: React.FC = ({ }) => {
                     </ul>
                 </nav>
                 <nav className={socials}>
-                <h1>Socials</h1>
+                    <h1>Socials</h1>
                     <ul>
-                        <li><Link href="https://www.facebook.com/Limprimeur-107384444097355/?ref=bookmarks"><a target="blank" ><FacebookIcon /></a></Link></li>
-                        <li><Link href="https://www.instagram.com/express.imprimerie/"><a target="blank"><InstagramIcon /></a></Link></li>
-                        <li><Link href="/"><a><EmailIcon /></a></Link></li>
+                        <li><Link href="https://www.facebook.com/Limprimeur-107384444097355/?ref=bookmarks"><a className={icons} target="blank" ><Facebook /></a></Link></li>
+                        <li><Link href="https://www.instagram.com/express.imprimerie/"><a className={icons} target="blank"><Instagram /></a></Link></li>
+                        <li><Link href="/"><a className={icons}><WhatsApp /></a></Link></li>
                     </ul>
                 </nav>
             </div>

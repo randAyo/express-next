@@ -2,6 +2,11 @@
 $head-font     : 4rem;
 $paragraph-font: $head-font/2;
 
+.icons svg {
+    fill: $white;
+    margin: 1rem;
+}
+
 .footer {
     height                  : 70vh;
     background-image        : url('/deskBg.webp');

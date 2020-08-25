@@ -1,9 +1,9 @@
 import React from 'react'
 import classes from './FlipCard.module.scss'
 import { EmailPhoneDirection } from '../EmailPhoneDirection/EmailPhoneDirection';
-import NavigationIcon from '@material-ui/icons/Navigation';
-import EmailIcon from '@material-ui/icons/Email';
-import PhoneIcon from '@material-ui/icons/Phone';
+import { Navigation } from '../svg/Navigation';
+import { Email } from '../svg/Email';
+import {Phone} from '../svg/Phone';
 
 interface FlipCardProps {
     name: string
@@ -12,7 +12,7 @@ interface FlipCardProps {
 const { flipCard, flipCardInner, flipCardFront, flipCardBack, contactIcons } = classes;
 
 export const FlipCard: React.FC<FlipCardProps> = ({ name, className }) => {
-    const svgToBeRendered = name === "phone" ? (<PhoneIcon className={contactIcons} />) : name === "direction" ? (<NavigationIcon className={contactIcons} />) : (<EmailIcon className={contactIcons} />)
+    const svgToBeRendered = name === "phone" ? (<Phone className={contactIcons} />) : name === "direction" ? (<Navigation className={contactIcons} />) : (<Email className={contactIcons} />)
     return (
         <div className={className}>
             <div className={flipCard}>
