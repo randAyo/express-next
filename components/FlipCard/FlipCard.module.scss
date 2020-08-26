@@ -55,12 +55,7 @@ $card-back : $blue;
 }
 
 .contactIcons {
-    // transform: scale(10);
     fill    : $blue;
-
-    @include screen(mobile) {
-        transform: scale(7);
-    }
 }
 
 .phoneItem,
