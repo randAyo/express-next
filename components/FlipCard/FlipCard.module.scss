@@ -64,10 +64,11 @@ $card-back : $blue;
 }
 
 .phoneItem,
-.emailItem {
+.emailItem,
+.direction {
    margin-right: 2rem;
 
-    @include screen((max-width: 1317px)) {
+    @media (max-width: 1317px) {
         margin-bottom: 2rem;
         margin-right: 0;
     }

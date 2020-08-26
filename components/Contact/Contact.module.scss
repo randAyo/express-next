@@ -2,11 +2,13 @@
 $contact-bg  : transparent;
 $heading-size: 2.3rem;
 $par-size    : 2rem;
-.contactSection{
+
+.contactSection {
     background-color: $orange;
     @include flexed;
     margin-top: 2rem;
 }
+
 .contactContainer {
     @include contain($bg :$orange);
     color                : set-text-color($contact-bg);
@@ -76,17 +78,23 @@ $par-size    : 2rem;
     color         : $white;
 }
 
-.howContact ul {
-    display        : flex;
-    justify-content: space-evenly;
-    max-width      : 22rem;
+.howContact {
+    width : 90%;
+    margin: 2rem 0;
 
-    li {
-        padding: 0.7rem 2rem;
+    ul {
+        display           : flex;
+        justify-content   : space-between;
+        // max-width      : 22rem;
+        width             : 100%;
 
-        svg {
-            transform: scale(3);
-            fill     : $white;
+        li {
+            padding: 0.7rem 2rem;
+
+            svg {
+                transform: scale(3);
+                fill     : $white;
+            }
         }
     }
 }
@@ -128,7 +136,7 @@ $par-size    : 2rem;
     }
 
     .contactInput {
-        grid-column      : 2/-1;
+        grid-column      : 1/-1;
         // grid-row      : 3 / span 1;
         flex-direction   : column;
         overflow-x       : hidden;
