@@ -84,28 +84,25 @@ $line-speed             :#{($animation-speed*4)}'s';
     grid-template-areas: "logo nav";
     padding            : 1em;
     background-color   : $header-bg;
+}
 
-    .Nav {
-        grid-area: nav;
-        @include flexed;
+.Nav {
+    grid-area: nav;
+    @include flexed;
 
-        .navbarContentList {
-            padding        : 1em 0;
-            position       : relative;
-            display        : flex;
-            align-items    : center;
-            justify-content: space-evenly;
-            width          : 100%;
-        }
-    }
+}
 
-    .Logo {
-        height: 60px;
-    }
+.navbarContentList {
+    padding        : 1em 0;
+    position       : relative;
+    display        : flex;
+    align-items    : center;
+    justify-content: space-evenly;
+    width          : 100%;
+}
 
-    // .burger {
-    //     display: none;
-    // }
+.Logo {
+    height: 60px;
 }
 
 .navbarAnchor,
@@ -123,6 +120,17 @@ $line-speed             :#{($animation-speed*4)}'s';
     &:focus {
         outline: none;
     }
+}
+
+.bubble {
+    background-color: $white;
+    border-radius   : 1rem;
+    height          : 0vh;
+    width           : 0vw;
+    z-index         : -2;
+    position        : absolute;
+    bottom          : 0%;
+    transition      : all #{$animation-speed}s $ease;
 }
 
 // HANDLE SMALL SCREEN
@@ -148,16 +156,7 @@ $line-speed             :#{($animation-speed*4)}'s';
     }
 }
 
-.bubble {
-    background-color: $light-orange;
-    border-radius   : 1rem;
-    height          : 0vh;
-    width           : 0vw;
-    z-index         : -2;
-    position        : absolute;
-    bottom          : 0%;
-    transition      : all #{$animation-speed}s $ease;
-}
+
 
 //Header ends here =============================
 

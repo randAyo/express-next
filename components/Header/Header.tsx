@@ -10,7 +10,7 @@ interface HeaderProps {
 
 }
 const Burger = () => (<><div></div><div></div><div></div></>)
-const { headerStyle, Nav, navbarContentList, navbarAnchor, dropdown, blue, orange, burger, burgerX } = classes;
+const { bubble, headerStyle, Nav, navbarContentList, navbarAnchor, dropdown, blue, orange, burger, burgerX } = classes;
 export const Header: React.FC<HeaderProps> = ({ height }) => {
 	const [isNavVisible, setIsNavVisible] = useState(false);
 	const [isSmallScreen, setisSmallScreen] = useState(false);
@@ -57,7 +57,7 @@ export const Header: React.FC<HeaderProps> = ({ height }) => {
 		setisDropVisible(!isDropVisible);
 	}
 	const onOneHover = (id: number) => {
-		const styl = document.querySelector('.bubble') as HTMLDivElement;
+		const styl = document.querySelector(`.${bubble}`) as HTMLDivElement;
 		if (id === 0) {
 			styl.style.width = '0px';
 			styl.style.height = '0px'
@@ -111,7 +111,7 @@ export const Header: React.FC<HeaderProps> = ({ height }) => {
 						</li>
 						<li><a onMouseOver={() => onOneHover(1)} className={navbarAnchor} href="/#section-about">Pourquoi Nous?</a></li>
 						<li><a onMouseOver={() => onOneHover(2)} className={navbarAnchor} href="/#section-contact">Contact</a></li>
-						<div className="bubble"></div>
+						<div className={bubble}></div>
 					</ul>
 				</nav>
 			</CSSTransition>
