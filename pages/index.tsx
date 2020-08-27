@@ -6,7 +6,7 @@ import { Contact } from '../components/Contact/Contact'
 import { Products } from '../components/Products/Products'
 
 const IndexPage = () => (
-  <Layout title="Express Imprimerie Home">
+  <Layout title="Express Imprimerie">
     <Hero />
     <About />
     <Products />

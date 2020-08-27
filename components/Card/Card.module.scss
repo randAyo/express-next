@@ -19,25 +19,26 @@
 
     position: relative;
 
-    .cardDescription {
-        padding  : 0 10px;
-        position : absolute;
-        top      : 80%;
-        left     : 3%;
-        transform: translate(-3%, -80%);
+}
 
-        p {
-            overflow                          : hidden;
-            text-overflow                     : ellipsis;
-            display                           : -webkit-box;
-            -webkit-line-clamp                : 3;
-            -webkit-box-orient                : vertical;
-            margin                            : 1em 0;
-            color                             : $gray;
-            text-align                        : start;
-            word-wrap                         : break-word;
-            @include paragraph-font($font-size: 1.2rem)
-        }
+.cardDescription {
+    padding  : 0 10px;
+    position : absolute;
+    top      : 80%;
+    left     : 3%;
+    transform: translate(-3%, -80%);
+
+    p {
+        overflow                          : hidden;
+        text-overflow                     : ellipsis;
+        display                           : -webkit-box;
+        -webkit-line-clamp                : 3;
+        -webkit-box-orient                : vertical;
+        margin                            : 1em 0;
+        color                             : $gray;
+        text-align                        : start;
+        word-wrap                         : break-word;
+        @include paragraph-font($font-size: 1.2rem)
     }
 }
 

@@ -82,19 +82,19 @@ $par-size    : 2rem;
     width : 90%;
     margin: 2rem 0;
 
-    ul {
-        display           : flex;
-        justify-content   : space-between;
-        // max-width      : 22rem;
-        width             : 100%;
+}
 
-        li {
-            padding: 0.7rem 2rem;
+.howContactUl {
+    display        : flex;
+    justify-content: space-between;
+    width          : 100%;
 
-            svg {
-                transform: scale(3);
-                fill     : $white;
-            }
+    li {
+        padding: 0.7rem 2rem;
+
+        svg {
+            transform: scale(3);
+            fill     : $white;
         }
     }
 }
@@ -139,7 +139,7 @@ $par-size    : 2rem;
         grid-column      : 1/-1;
         // grid-row      : 3 / span 1;
         flex-direction   : column;
-        overflow-x       : hidden;
+        overflow-y      : hidden;
         align-items      : center;
     }
 }

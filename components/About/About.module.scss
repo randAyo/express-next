@@ -7,16 +7,8 @@ $font-size : 2rem;
     overflow-y           : hidden;
     @include contain($bg : $about-bg, $padding: 0, $max-width: 100%);
     color                : set-text-color($about-bg);
-    display              : grid;
-    grid-template-columns: repeat(4, 1fr) 500px;
-    grid-template-rows   : 100px repeat(3, auto);
     position             : relative;
     overflow             : hidden;
-    transition           : all 2s $ease;
-
-
-
-    // @include screen((max-width: 1316px)) {}
 }
 
 @media (max-width: 1316px) {
@@ -32,33 +24,6 @@ $font-size : 2rem;
     text-align : center;
     grid-column: 1/-1;
     grid-row   : 1/ span 1;
-}
-
-.aboutImg {
-    width      : 100%;
-    grid-column: 1/span 4;
-    grid-row   : 2/ span 2;
-    @include about-grid(2);
-}
-
-.aboutMission {
-    grid-column: 4/-1;
-    grid-row   : 2/ span 1;
-    @include about-grid(3);
-    @include about-grid($row: 2, $column: '5/-1', $width: 1700px, $min: true);
-}
-
-.aboutConcept {
-    grid-column: 5/-1;
-    grid-row   : 3/ span 1;
-
-    @include about-grid(4);
-}
-
-.aboutPhilosophie {
-    grid-column: 1/-1;
-    grid-row   : 4/ span 1;
-    @include about-grid(5);
 }
 
 .readMore {
