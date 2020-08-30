@@ -109,8 +109,8 @@ export const Header: React.FC<HeaderProps> = ({ height }) => {
 							</CSSTransition>
 							{/* {	isDropVisible && } */}
 						</li>
-						<li><a onMouseOver={() => onOneHover(1)} className={navbarAnchor} href="/#section-about">Pourquoi Nous?</a></li>
-						<li><a onMouseOver={() => onOneHover(2)} className={navbarAnchor} href="/#section-contact">Contact</a></li>
+						<li><a onMouseOver={() => onOneHover(1)} className={navbarAnchor} href="/">Pourquoi Nous?</a></li>
+						<li><a onMouseOver={() => onOneHover(2)} className={navbarAnchor} href="/">Contact</a></li>
 						<div className={bubble}></div>
 					</ul>
 				</nav>
