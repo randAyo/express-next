@@ -5,19 +5,11 @@ $font-size : 2rem;
 
 .aboutContainer {
     overflow-y           : hidden;
-    @include contain($bg : $about-bg, $padding: 0, $max-width: 100%);
+    @include contain($bg : $about-bg, $padding: 0 10rem, $max-width: 100%);
     color                : set-text-color($about-bg);
     position             : relative;
     overflow             : hidden;
 }
-
-@media (max-width: 1316px) {
-    .aboutContainer {
-        grid-template-columns: auto;
-
-    }
-}
-
 .aboutHeading {
     @include heading-font();
     color      : $blue;
