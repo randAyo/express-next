@@ -1,6 +1,5 @@
 import React from 'react'
 import classes from './ServiceWrapper.module.scss'
-import ServiceContent from '../ServiceContent/ServiceContent';
 
 interface ServiceWrapperProps {
     children: React.ReactNode
@@ -14,4 +13,4 @@ interface ServiceWrapperProps {
     );
 }
 
-export default ServiceWrapper;
+export default ServiceWrapper
