@@ -37,6 +37,19 @@ html {
  * Remove the margin in all browsers.
  */
 
+@font-face {
+    font-family : 'Neucha';
+    src         : url('../public/Neucha/Neucha-Regular.ttf');
+    font-weight : 300;
+    font-display: auto;
+    font-style  : normal;
+}
+@font-face {
+    font-family : 'Noto';
+    src         : url('../public/Noto_Sans/NotoSans-Regular.ttf');
+    font-display: auto;
+    font-style  : normal;
+}
 body {
     margin          : 0;
     background-color: white;
@@ -590,6 +603,7 @@ p {
     }
 
 }
+
 .card {
     @include push--auto;
     max-height              : 45rem;
@@ -638,6 +652,3 @@ p {
     }
 
 }
-
-
-
