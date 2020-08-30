@@ -4,7 +4,7 @@ import { DeliverSvg } from '../svg/DeliverSvg';
 import { PrintSvg } from '../svg/PrintSvg';
 import { DesignSvg } from '../svg/DesignSvg';
 
-export const Offering: React.FC = ({ }) => {
+ const Offering: React.FC = ({ }) => {
     const services = [
         {
             service: 'Conception',
@@ -49,3 +49,5 @@ export const Offering: React.FC = ({ }) => {
         </section>
     );
 }
+
+export default Offering;

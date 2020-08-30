@@ -1,13 +1,15 @@
 import Layout from '../../../components/Layout'
 import { NextPage } from 'next';
 import { api, accordion } from '../../../interfaces';
-import { SideNav } from '../../../components/SideNav/SideNav';
-import { ServiceContent } from '../../../components/ServiceContent/ServiceContent';
-import { ServiceWrapper } from '../../../components/ServiceWrapper/ServiceWrapper';
 import { server } from '../../../config'
 import useWindowDimensions from '../../../hoc/useWindow';
-// import LazyLoader from '../../../components/LazyLoader/LazyLoader';
-// import { Suspense } from 'react';
+
+import loadable from '@loadable/component';
+
+const SideNav = loadable(() => import('../../../components/SideNav/SideNav'));
+const ServiceContent = loadable(() => import('../../../components/ServiceContent/ServiceContent'));
+const ServiceWrapper = loadable(() => import('../../../components/ServiceWrapper/ServiceWrapper'));
+
 
 interface PropsPro extends api {
     accordion: accordion[]
@@ -24,14 +26,7 @@ const Product: NextPage<PropsPro> = ({ name, accordion, nameList, src, descripti
     return (
         <Layout title="Express Imprimerie Services">
             <ServiceWrapper>
-                {
-                    width > 900 &&
-
-
-                    <SideNav nameList={nameList} />
-
-                }
-
+                {width > 900 && <SideNav nameList={nameList} />}
                 <ServiceContent
                     accordionArray={accordion}
                     name={name}

@@ -3,7 +3,7 @@ import classes from './Products.module.scss'
 import { Cards } from '../Cards/Cards'
 
 
-export const Products: React.FC = () => {
+ const Products: React.FC = () => {
     return (
         <section className={classes.container}>
             <h1>Produits :</h1>
@@ -11,3 +11,4 @@ export const Products: React.FC = () => {
         </section>
     );
 }
+export default Products;

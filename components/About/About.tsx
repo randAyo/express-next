@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import classes from './About.module.scss'
 
 
-export const About: React.FC = () => {
+ const About: React.FC = () => {
 	const [expend, setExpend] = useState(false);
 	const { aboutContainer, aboutHeading, aboutMission, aboutConcept, aboutPhilosophie, readMore } = classes;
 	return (
@@ -24,3 +24,4 @@ export const About: React.FC = () => {
 		</section>
 	);
 }
+export default About;

@@ -6,7 +6,7 @@ interface productName {
     nameList: NameList[]
 }
 
-export const SideNav: React.FC<productName> = ({ nameList }) => {
+ const SideNav: React.FC<productName> = ({ nameList }) => {
     const { sidenav, unordered, btn } = classes;
     return (
         <aside className={sidenav}>
@@ -27,3 +27,4 @@ export const SideNav: React.FC<productName> = ({ nameList }) => {
         </aside>
     );
 }
+export default SideNav;

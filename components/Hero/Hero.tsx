@@ -2,7 +2,7 @@ import React from 'react'
 import classes from './Hero.module.scss'
 import { HeroSvg } from '../svg/HeroSvg';
 
-export const Hero: React.FC = () => {
+ const Hero: React.FC = () => {
     const { hero, bail, calltoAction, bailHeading, letters1, letters2, letters3, letters4, letters5, letters6, letters7, letters9, letters8, letters10, letters11, letters12 } = classes;
     return (
         <section className={hero}>
@@ -20,3 +20,5 @@ export const Hero: React.FC = () => {
         </section>
     );
 }
+
+export default Hero;

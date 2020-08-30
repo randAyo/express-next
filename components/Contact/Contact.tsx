@@ -22,7 +22,7 @@ const FlipCards = (
     </div>
 )
 
-export const Contact: React.FC = () => {
+ const Contact: React.FC = () => {
     return (
         <section className={contactSection}>
             <div className={contactContainer}>
@@ -51,3 +51,5 @@ export const Contact: React.FC = () => {
         </section>
     );
 }
+
+export default Contact;
