@@ -1,12 +1,18 @@
 import Layout from '../components/Layout'
 import dynamic from 'next/dynamic';
+import LazyLoader from '../components/LazyLoader/LazyLoader';
+export const config = { amp: true }
 
-
-const About = dynamic(() => import('../components/About/About'));
-const Offering = dynamic(() => import('../components/Offering/Offering'));
-const Contact = dynamic(() => import('../components/Contact/Contact'));
-const Products = dynamic(() => import('../components/Products/Products'));
-const Hero = dynamic(() => import('../components/Hero/Hero'))
+const About = dynamic(() => import('../components/About/About'),
+  { loading: () => <LazyLoader /> });
+const Offering = dynamic(() => import('../components/Offering/Offering'),
+  { loading: () => <LazyLoader /> });
+const Contact = dynamic(() => import('../components/Contact/Contact'),
+  { loading: () => <LazyLoader /> });
+const Products = dynamic(() => import('../components/Products/Products'),
+  { loading: () => <LazyLoader /> });
+const Hero = dynamic(() => import('../components/Hero/Hero'),
+  { loading: () => <LazyLoader /> })
 
 
 
