@@ -25,6 +25,7 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
       <meta name="theme-color" content="#dcdada"></meta>
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170268181-1"></script>
       <script
+        defer
         dangerouslySetInnerHTML={{
           __html: `
           window.dataLayer = window.dataLayer || [];
@@ -35,7 +36,7 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
       `,
         }}
       />
-      <script dangerouslySetInnerHTML={{
+      <script defer dangerouslySetInnerHTML={{
         __html: `
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
         (function () {
