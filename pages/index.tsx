@@ -1,7 +1,7 @@
 import Layout from '../components/Layout'
 import dynamic from 'next/dynamic';
 import LazyLoader from '../components/LazyLoader/LazyLoader';
-export const config = { amp: true }
+
 
 const About = dynamic(() => import('../components/About/About'),
   { loading: () => <LazyLoader /> });

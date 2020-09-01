@@ -3,11 +3,6 @@ import { NextPage } from 'next';
 import { api, accordion } from '../../../interfaces';
 import { server } from '../../../config'
 import useWindowDimensions from '../../../hoc/useWindow';
-// import ServiceWrapper from '../../../components/ServiceWrapper/ServiceWrapper';
-// import ServiceContent from '../../../components/ServiceContent/ServiceContent';
-// import SideNav from '../../../components/SideNav/SideNav';
-
-// import loadable from '@loadable/component';
 import dynamic from 'next/dynamic'
 const SideNav = dynamic(() => import('../../../components/SideNav/SideNav'));
 const ServiceContent = dynamic(() => import('../../../components/ServiceContent/ServiceContent'));
