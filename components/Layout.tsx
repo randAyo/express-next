@@ -24,7 +24,7 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
       <meta name="msapplication-TileColor" content="#da532c" />
       <meta name="theme-color" content="#dcdada"></meta>
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170268181-1"></script>
-      <script
+      {/* <script
         defer
         dangerouslySetInnerHTML={{
           __html: `
@@ -35,7 +35,7 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
           gtag('config', 'UA-170268181-1');
       `,
         }}
-      />
+      /> */}
       <script defer dangerouslySetInnerHTML={{
         __html: `
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
