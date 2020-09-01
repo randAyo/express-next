@@ -1,12 +1,15 @@
-
 //
 /* HEX PALETE */
-$color1           : #00171f;
-$color2           : #003459;
-$color3           : #4b595b;
-$color4           : #fdfffc;
-$color5           : #CF5600;
-$color6           : #174d73;
+$color1 : #00171f;
+$color2 : #264653;
+$color3 : #4b595b;
+$color4 : #fdfffc;
+$color5 : #E76F51;
+$color6 : #174d73;
+
+//secondary pallte
+// $color1:#264653;
+
 
 /* note make sure that secondary white isn't too bright and that hex
  codes are 6 figures only because that  creates a big problem */
@@ -40,7 +43,7 @@ $ease           : cubic-bezier(0.68, -0.55, 0.265, 1.55);
 $animation-speed: 0.7; //use function to add s to the end
 
 :export {
-        blue: $blue;
-        gray: $gray;
+        blue  : $blue;
+        gray  : $gray;
         orange: $orange;
 }
