@@ -1,7 +1,5 @@
 import '../scss/styles.scss'
-
-// import App from "next/app";
-import App from 'next/app'
+import App, { AppContext } from 'next/app'
 
 
 class MyApp extends App<any, {}, {}> {
@@ -16,11 +14,11 @@ class MyApp extends App<any, {}, {}> {
 // perform automatic static optimization, causing every page in your app to
 // be server-side rendered.
 //
-// MyApp.getInitialProps = async (appContext: AppContext) => {
-//   // calls page's `getInitialProps` and fills `appProps.pageProps`
-//   const appProps = await App.getInitialProps(appContext);
+MyApp.getInitialProps = async (appContext: AppContext) => {
+  // calls page's `getInitialProps` and fills `appProps.pageProps`
+  const appProps = await App.getInitialProps(appContext);
 
-//   return { ...appProps }
-// }
+  return { ...appProps }
+}
 
 export default MyApp
