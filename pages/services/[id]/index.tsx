@@ -3,10 +3,10 @@ import { NextPage } from 'next';
 import { api, accordion } from '../../../interfaces';
 import { server } from '../../../config'
 import useWindowDimensions from '../../../hoc/useWindow';
-import dynamic from 'next/dynamic'
-const SideNav = dynamic(() => import('../../../components/SideNav/SideNav'));
-const ServiceContent = dynamic(() => import('../../../components/ServiceContent/ServiceContent'));
-const ServiceWrapper = dynamic(() => import('../../../components/ServiceWrapper/ServiceWrapper'));
+// import dynamic from 'next/dynamic'
+// const SideNav = dynamic(() => import('../../../components/SideNav/SideNav'));
+// const ServiceContent = dynamic(() => import('../../../components/ServiceContent/ServiceContent'));
+// const ServiceWrapper = dynamic(() => import('../../../components/ServiceWrapper/ServiceWrapper'));
 
 
 interface PropsPro extends api {
