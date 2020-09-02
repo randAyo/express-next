@@ -18,7 +18,7 @@ interface productName {
                         <Link
                             to={url}
                             href={url}>
-                            <p>{ex.name}</p>
+                            <a>{ex.name}</a>
                         </Link>
                     </li>
                 )
