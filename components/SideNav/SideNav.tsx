@@ -16,9 +16,9 @@ interface productName {
                 return (
                     <li key={ex.id} className={btn}>
                         <Link
-                            to={url}
+                            
                             href={url}>
-                            <a>{ex.name}</a>
+                            <p>{ex.name}</p>
                         </Link>
                     </li>
                 )
