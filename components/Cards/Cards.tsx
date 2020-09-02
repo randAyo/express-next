@@ -6,18 +6,13 @@ import { Card } from '../Card/Card'
 import useWindowDimensions from '../../hoc/useWindow';
 const { cards, carda, colCard, indicatorContainer, indicatorItem, rightCardBtn, leftCardBtn } = classes;
 
-export const Cards: React.FC = ({ }) => {
+const Cards: React.FC = () => {
   if (process.browser) {
     var { width } = useWindowDimensions();
-
   }
-  const [isHovred, setisHovred] = useState<boolean>(false);
   const [index, setIndex] = useState<number>(0);
   const onNext = () => {
-    if (isHovred) {
-      return
-    }
-    else if (index < details.length - 1) {
+    if (index < details.length - 1) {
       setIndex(index + 1)
     } else {
       setIndex(0)
@@ -43,19 +38,19 @@ export const Cards: React.FC = ({ }) => {
     multiplier = (140 * index);
   }
   const mappedCards = details.map(ex => {
-    return <div
-      onMouseEnter={() => setisHovred(true)}
-      onMouseLeave={() => setisHovred(false)}
-      style={{ transform: `translateX(${multiplier}%)` }} className={index === ex.id ? `${colCard} card-active-${index}s` : colCard} key={ex.id}  >
-      <Card
-        // @ts-ignore
-        cardId={ex.id}
-        title={ex.name}
-        src={ex.src}
-        content={ex.content.description}
-        setIndex={setIndex}
-      />
-    </div>
+    console.log(' rendered')
+    return (
+      <div
+        style={{ transform: `translateX(${multiplier}%)` }} className={index === ex.id ? `${colCard} card-active-${index}s` : colCard} key={ex.id}  >
+        <Card
+          // @ts-ignore
+          cardId={ex.id}
+          title={ex.name}
+          src={ex.src}
+          content={ex.content.description}
+          setIndex={setIndex}
+        />
+      </div>)
   })
   return (
     <>
@@ -89,4 +84,5 @@ export const Cards: React.FC = ({ }) => {
       </div>
     </>
   );
-}
+};
+export default React.memo(Cards);

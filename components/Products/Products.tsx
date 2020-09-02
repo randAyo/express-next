@@ -1,6 +1,6 @@
 import React from 'react'
 import classes from './Products.module.scss'
-import { Cards } from '../Cards/Cards'
+import  Cards  from '../Cards/Cards'
 
 
  const Products: React.FC = () => {
