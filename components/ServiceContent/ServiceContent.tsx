@@ -2,19 +2,28 @@ import React from 'react'
 import classes from './ServiceContent.module.scss'
 import { serviceContent, accordion } from '../../interfaces';
 import { Accordion } from '../Accordion/Accordion'
+import Image from 'next/image'
 
 interface props extends serviceContent {
 	accordionArray: accordion[]
 }
 
- const ServiceContent: React.FC<props> = ({ name, src, minPrice, description, accordionArray }) => {
+const ServiceContent: React.FC<props> = ({ name, src, minPrice, description, accordionArray }) => {
 	const { Ccontainer, heading, content, details, image, text, accordionContainer } = classes;
 	return (
 		<div className={Ccontainer}>
 			<h1 className={heading}>{name}</h1>
 			<div className={content}>
 				<div className={details}>
-					<div className={image}><img src={src} alt={name} /></div>
+					<div className={image}>
+						<Image
+							loading="lazy"
+							src={src}
+							alt={name}
+							width="auto"
+							height="auto"
+							layout="responsive"
+						/></div>
 					<div className={text}>
 						{description.map((ex, index) =>
 							<p
